@@ -1,0 +1,102 @@
+<!-- Investor Corporate Governance Section - Standalone for Corporate Governance page -->
+<!-- Shortcode: [kyan_investor_corporate_governance] -->
+
+<div class="kyan-investor-dashboard-wrapper kyan-investor-governance-section">
+<style>
+.kyan-investor-governance-section { all: initial; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important; display: block !important; box-sizing: border-box !important; position: relative !important; isolation: isolate; width: 100% !important; margin: 0 !important; padding: 0 !important; }
+.kyan-investor-governance-section *,.kyan-investor-governance-section *::before,.kyan-investor-governance-section *::after { box-sizing: border-box !important; }
+.kyan-investor-governance-section .dashboard-main { flex: 1; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,.08); overflow: hidden; display: flex; flex-direction: column; }
+.kyan-investor-governance-section .dashboard-header { background: linear-gradient(135deg, #2c5f7c 0%, #1e4a5f 100%); color: #fff; padding: 32px 40px; border-radius: 16px 16px 0 0; }
+.kyan-investor-governance-section .page-title { font-size: 26px; font-weight: 600; margin: 0; }
+.kyan-investor-governance-section .dashboard-content { padding: 36px 40px; flex: 1; }
+.kyan-investor-governance-section .governance-section { margin-bottom: 40px; }
+.kyan-investor-governance-section .governance-section-title { font-size: 22px; font-weight: 600; color: #1a4d5e; margin: 0 0 24px 0; }
+.kyan-investor-governance-section .directors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.kyan-investor-governance-section .director-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.06); border: 1px solid #e8ecef; transition: transform .2s ease, box-shadow .2s ease; text-align: center; }
+.kyan-investor-governance-section .director-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+.kyan-investor-governance-section .director-image { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: #1a4d5e; font-size: 36px; font-weight: 600; background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%); border: 3px solid #e8ecef; }
+.kyan-investor-governance-section .director-name { font-size: 18px; font-weight: 600; color: #1a4d5e; margin: 0 0 8px 0; }
+.kyan-investor-governance-section .director-title { font-size: 14px; font-weight: 500; color: #2c3e50; margin: 0 0 6px 0; }
+.kyan-investor-governance-section .director-tenure { font-size: 13px; color: #6c757d; margin: 0; }
+.kyan-investor-governance-section .committees-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.kyan-investor-governance-section .committee-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,.06); border: 1px solid #e8ecef; transition: transform .2s ease, box-shadow .2s ease; display: flex; align-items: flex-start; gap: 16px; }
+.kyan-investor-governance-section .committee-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+.kyan-investor-governance-section .committee-icon { width: 48px; height: 48px; background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+.kyan-investor-governance-section .committee-info { flex: 1; }
+.kyan-investor-governance-section .committee-name { font-size: 18px; font-weight: 600; color: #1a4d5e; margin: 0 0 8px 0; }
+.kyan-investor-governance-section .committee-description { font-size: 14px; color: #6c757d; line-height: 1.5; margin: 0 0 8px 0; }
+.kyan-investor-governance-section .committee-members { font-size: 13px; color: #6c757d; font-weight: 500; margin: 0; }
+@media (max-width: 768px) {
+    .kyan-investor-governance-section .dashboard-header { padding: 20px 24px !important; }
+    .kyan-investor-governance-section .page-title { font-size: 20px !important; }
+    .kyan-investor-governance-section .dashboard-content { padding: 24px 20px !important; }
+    .kyan-investor-governance-section .directors-grid { grid-template-columns: 1fr !important; }
+    .kyan-investor-governance-section .committees-grid { grid-template-columns: 1fr !important; }
+}
+</style>
+<main class="dashboard-main">
+    <header class="dashboard-header">
+        <h1 class="page-title">Governance Structure and Committees</h1>
+    </header>
+    <div class="dashboard-content">
+        <section class="governance-section">
+            <h2 class="governance-section-title">Board of Directors</h2>
+            <div class="directors-grid">
+                <div class="director-card">
+                    <div class="director-image">LA</div>
+                    <h3 class="director-name">Layla Al-Mansoori</h3>
+                    <p class="director-title">Chairperson - Board of Directors</p>
+                    <p class="director-tenure">2018 - Present</p>
+                </div>
+                <div class="director-card">
+                    <div class="director-image">OK</div>
+                    <h3 class="director-name">Omar Khalid</h3>
+                    <p class="director-title">Independent Director - Audit Committee</p>
+                    <p class="director-tenure">2020 - Present</p>
+                </div>
+                <div class="director-card">
+                    <div class="director-image">ZA</div>
+                    <h3 class="director-name">Zayd Al-Farsi</h3>
+                    <p class="director-title">Non-Executive Director - Nomination &amp; Remuneration</p>
+                    <p class="director-tenure">2021 - Present</p>
+                </div>
+                <div class="director-card">
+                    <div class="director-image">AF</div>
+                    <h3 class="director-name">Amina Farah</h3>
+                    <p class="director-title">Executive Director - Risk Committee</p>
+                    <p class="director-tenure">2019 - Present</p>
+                </div>
+            </div>
+        </section>
+        <section class="governance-section">
+            <h2 class="governance-section-title">Committees</h2>
+            <div class="committees-grid">
+                <div class="committee-card">
+                    <div class="committee-icon">&#128101;</div>
+                    <div class="committee-info">
+                        <h3 class="committee-name">Audit Committee</h3>
+                        <p class="committee-description">Financial oversight, internal controls, and external audit coordination</p>
+                        <p class="committee-members">4 members</p>
+                    </div>
+                </div>
+                <div class="committee-card">
+                    <div class="committee-icon">&#128101;</div>
+                    <div class="committee-info">
+                        <h3 class="committee-name">Risk Committee</h3>
+                        <p class="committee-description">Risk management, assessment, and mitigation strategies</p>
+                        <p class="committee-members">8 members</p>
+                    </div>
+                </div>
+                <div class="committee-card">
+                    <div class="committee-icon">&#128101;</div>
+                    <div class="committee-info">
+                        <h3 class="committee-name">Nomination &amp; Remuneration Committee</h3>
+                        <p class="committee-description">Board appointments, succession planning, and compensation</p>
+                        <p class="committee-members">2 members</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+</div>
