@@ -3,100 +3,363 @@
 
 <div class="kyan-investor-dashboard-wrapper kyan-investor-governance-section">
 <style>
-.kyan-investor-governance-section { all: initial; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important; display: block !important; box-sizing: border-box !important; position: relative !important; isolation: isolate; width: 100% !important; margin: 0 !important; padding: 0 !important; }
-.kyan-investor-governance-section *,.kyan-investor-governance-section *::before,.kyan-investor-governance-section *::after { box-sizing: border-box !important; }
-.kyan-investor-governance-section .dashboard-main { flex: 1; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,.08); overflow: hidden; display: flex; flex-direction: column; }
-.kyan-investor-governance-section .dashboard-header { background: linear-gradient(135deg, #2c5f7c 0%, #1e4a5f 100%); color: #fff; padding: 32px 40px; border-radius: 16px 16px 0 0; }
-.kyan-investor-governance-section .page-title { font-size: 26px; font-weight: 600; margin: 0; }
-.kyan-investor-governance-section .dashboard-content { padding: 36px 40px; flex: 1; }
-.kyan-investor-governance-section .governance-section { margin-bottom: 40px; }
-.kyan-investor-governance-section .governance-section-title { font-size: 22px; font-weight: 600; color: #1a4d5e; margin: 0 0 24px 0; }
-.kyan-investor-governance-section .directors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.kyan-investor-governance-section .director-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.06); border: 1px solid #e8ecef; transition: transform .2s ease, box-shadow .2s ease; text-align: center; }
-.kyan-investor-governance-section .director-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
-.kyan-investor-governance-section .director-image { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: #1a4d5e; font-size: 36px; font-weight: 600; background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%); border: 3px solid #e8ecef; }
-.kyan-investor-governance-section .director-name { font-size: 18px; font-weight: 600; color: #1a4d5e; margin: 0 0 8px 0; }
-.kyan-investor-governance-section .director-title { font-size: 14px; font-weight: 500; color: #2c3e50; margin: 0 0 6px 0; }
-.kyan-investor-governance-section .director-tenure { font-size: 13px; color: #6c757d; margin: 0; }
-.kyan-investor-governance-section .committees-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.kyan-investor-governance-section .committee-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,.06); border: 1px solid #e8ecef; transition: transform .2s ease, box-shadow .2s ease; display: flex; align-items: flex-start; gap: 16px; }
-.kyan-investor-governance-section .committee-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
-.kyan-investor-governance-section .committee-icon { width: 48px; height: 48px; background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
-.kyan-investor-governance-section .committee-info { flex: 1; }
-.kyan-investor-governance-section .committee-name { font-size: 18px; font-weight: 600; color: #1a4d5e; margin: 0 0 8px 0; }
-.kyan-investor-governance-section .committee-description { font-size: 14px; color: #6c757d; line-height: 1.5; margin: 0 0 8px 0; }
-.kyan-investor-governance-section .committee-members { font-size: 13px; color: #6c757d; font-weight: 500; margin: 0; }
-@media (max-width: 768px) {
-    .kyan-investor-governance-section .dashboard-header { padding: 20px 24px !important; }
-    .kyan-investor-governance-section .page-title { font-size: 20px !important; }
-    .kyan-investor-governance-section .dashboard-content { padding: 24px 20px !important; }
-    .kyan-investor-governance-section .directors-grid { grid-template-columns: 1fr !important; }
-    .kyan-investor-governance-section .committees-grid { grid-template-columns: 1fr !important; }
-}
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+  .kyan-investor-governance-section {
+    all: initial;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    isolation: isolate;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .kyan-investor-governance-section *,
+  .kyan-investor-governance-section *::before,
+  .kyan-investor-governance-section *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* Layout */
+  .kyan-investor-governance-section .dashboard-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Header */
+  .kyan-investor-governance-section .dashboard-header {
+    background: #B5EAF3;
+    color: #1a1a1a;
+    width: 100%;
+    height: 61px;
+    padding: 0 10px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kyan-investor-governance-section .page-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0%;
+    margin: 0;
+    color: #1a1a1a;
+  }
+
+  /* Content */
+  .kyan-investor-governance-section .dashboard-content {
+    padding: 36px 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  /* Section blocks */
+  .kyan-investor-governance-section .governance-section {
+    margin-bottom: 36px;
+  }
+  .kyan-investor-governance-section .governance-section:last-child {
+    margin-bottom: 0;
+  }
+  .kyan-investor-governance-section .governance-section-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 16px 0;
+    line-height: 24px;
+  }
+
+  /* ── Board of Directors ── */
+  .kyan-investor-governance-section .directors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .kyan-investor-governance-section .director-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .kyan-investor-governance-section .director-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  }
+  .kyan-investor-governance-section .director-avatar {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+  }
+  .kyan-investor-governance-section .director-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .kyan-investor-governance-section .director-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .kyan-investor-governance-section .director-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 3px 0;
+    line-height: 1.4;
+  }
+  .kyan-investor-governance-section .director-title {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6b7280;
+    margin: 0 0 3px 0;
+    line-height: 1.4;
+  }
+  .kyan-investor-governance-section .director-tenure {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 0;
+  }
+
+  /* ── Committees ── */
+  .kyan-investor-governance-section .committees-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .kyan-investor-governance-section .committee-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .kyan-investor-governance-section .committee-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  }
+  .kyan-investor-governance-section .committee-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background-color: #00B4CD;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Ccircle cx='8' cy='6' r='3' stroke='white' stroke-width='1.5'/%3E%3Cpath d='M2 17c0-3.314 2.686-6 6-6s6 2.686 6 6' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='15' cy='6.5' r='2.5' stroke='white' stroke-width='1.5'/%3E%3Cpath d='M18 17c0-2.761-1.343-5-3-5.5' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    border-radius: 10px;
+  }
+  .kyan-investor-governance-section .committee-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .kyan-investor-governance-section .committee-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+  }
+  .kyan-investor-governance-section .committee-description {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .kyan-investor-governance-section .committee-members-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 28px;
+    padding: 4px 8px;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    white-space: nowrap;
+    flex-shrink: 0;
+    opacity: 1;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .kyan-investor-governance-section .dashboard-content {
+      padding: 28px 24px;
+    }
+    .kyan-investor-governance-section .directors-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .kyan-investor-governance-section .dashboard-main {
+      gap: 16px;
+    }
+    .kyan-investor-governance-section .dashboard-header {
+      height: auto !important;
+      padding: 14px 16px !important;
+      border-radius: 10px;
+    }
+    .kyan-investor-governance-section .page-title {
+      font-size: 18px !important;
+    }
+    .kyan-investor-governance-section .dashboard-content {
+      padding: 20px 16px !important;
+      border-radius: 12px;
+    }
+    .kyan-investor-governance-section .directors-grid {
+      grid-template-columns: 1fr !important;
+      gap: 10px !important;
+    }
+    .kyan-investor-governance-section .director-card {
+      padding: 14px 16px;
+    }
+    .kyan-investor-governance-section .committee-card {
+      padding: 14px 16px;
+      flex-wrap: wrap;
+    }
+    .kyan-investor-governance-section .committee-members-badge {
+      width: 100%;
+      justify-content: center;
+    }
+    .kyan-investor-governance-section .committees-list {
+      gap: 10px;
+    }
+  }
+
+  /* Extra small */
+  @media (max-width: 400px) {
+    .kyan-investor-governance-section .director-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 </style>
+
 <main class="dashboard-main">
-    <header class="dashboard-header">
-        <h1 class="page-title">Governance Structure and Committees</h1>
-    </header>
-    <div class="dashboard-content">
-        <section class="governance-section">
-            <h2 class="governance-section-title">Board of Directors</h2>
-            <div class="directors-grid">
-                <div class="director-card">
-                    <div class="director-image">LA</div>
-                    <h3 class="director-name">Layla Al-Mansoori</h3>
-                    <p class="director-title">Chairperson - Board of Directors</p>
-                    <p class="director-tenure">2018 - Present</p>
-                </div>
-                <div class="director-card">
-                    <div class="director-image">OK</div>
-                    <h3 class="director-name">Omar Khalid</h3>
-                    <p class="director-title">Independent Director - Audit Committee</p>
-                    <p class="director-tenure">2020 - Present</p>
-                </div>
-                <div class="director-card">
-                    <div class="director-image">ZA</div>
-                    <h3 class="director-name">Zayd Al-Farsi</h3>
-                    <p class="director-title">Non-Executive Director - Nomination &amp; Remuneration</p>
-                    <p class="director-tenure">2021 - Present</p>
-                </div>
-                <div class="director-card">
-                    <div class="director-image">AF</div>
-                    <h3 class="director-name">Amina Farah</h3>
-                    <p class="director-title">Executive Director - Risk Committee</p>
-                    <p class="director-tenure">2019 - Present</p>
-                </div>
-            </div>
-        </section>
-        <section class="governance-section">
-            <h2 class="governance-section-title">Committees</h2>
-            <div class="committees-grid">
-                <div class="committee-card">
-                    <div class="committee-icon">&#128101;</div>
-                    <div class="committee-info">
-                        <h3 class="committee-name">Audit Committee</h3>
-                        <p class="committee-description">Financial oversight, internal controls, and external audit coordination</p>
-                        <p class="committee-members">4 members</p>
-                    </div>
-                </div>
-                <div class="committee-card">
-                    <div class="committee-icon">&#128101;</div>
-                    <div class="committee-info">
-                        <h3 class="committee-name">Risk Committee</h3>
-                        <p class="committee-description">Risk management, assessment, and mitigation strategies</p>
-                        <p class="committee-members">8 members</p>
-                    </div>
-                </div>
-                <div class="committee-card">
-                    <div class="committee-icon">&#128101;</div>
-                    <div class="committee-info">
-                        <h3 class="committee-name">Nomination &amp; Remuneration Committee</h3>
-                        <p class="committee-description">Board appointments, succession planning, and compensation</p>
-                        <p class="committee-members">2 members</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+  <header class="dashboard-header">
+    <h1 class="page-title">Corporate Governance</h1>
+  </header>
+
+  <div class="dashboard-content">
+
+    <!-- Board of Directors -->
+    <section class="governance-section">
+      <h2 class="governance-section-title">Board of Directors</h2>
+      <div class="directors-grid">
+
+        <div class="director-card">
+          <div class="director-avatar">
+            <img src="https://i.pravatar.cc/56?img=47" alt="Layla Al-Mansoori" onerror="this.parentElement.textContent='LA'">
+          </div>
+          <div class="director-info">
+            <p class="director-name">Layla Al-Mansoori</p>
+            <p class="director-title">Chairperson - Board of Directors</p>
+            <p class="director-tenure">2018 - Present</p>
+          </div>
+        </div>
+
+        <div class="director-card">
+          <div class="director-avatar">
+            <img src="https://i.pravatar.cc/56?img=13" alt="Omar Khalid" onerror="this.parentElement.textContent='OK'">
+          </div>
+          <div class="director-info">
+            <p class="director-name">Omar Khalid</p>
+            <p class="director-title">Independent Director - Audit Committee</p>
+            <p class="director-tenure">2020 - Present</p>
+          </div>
+        </div>
+
+        <div class="director-card">
+          <div class="director-avatar">
+            <img src="https://i.pravatar.cc/56?img=60" alt="Zayd Al-Farsi" onerror="this.parentElement.textContent='ZA'">
+          </div>
+          <div class="director-info">
+            <p class="director-name">Zayd Al-Farsi</p>
+            <p class="director-title">Non-Executive Director - Nomination &amp; Remuneration</p>
+            <p class="director-tenure">2021 - Present</p>
+          </div>
+        </div>
+
+        <div class="director-card">
+          <div class="director-avatar">
+            <img src="https://i.pravatar.cc/56?img=45" alt="Amina Farah" onerror="this.parentElement.textContent='AF'">
+          </div>
+          <div class="director-info">
+            <p class="director-name">Amina Farah</p>
+            <p class="director-title">Executive Director - Risk Committee</p>
+            <p class="director-tenure">2019 - Present</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Committees -->
+    <section class="governance-section">
+      <h2 class="governance-section-title">Committees</h2>
+      <div class="committees-list">
+
+        <div class="committee-card">
+          <div class="committee-icon"></div>
+          <div class="committee-info">
+            <p class="committee-name">Audit Committee</p>
+            <p class="committee-description">Financial oversight, internal controls, and external audit coordination</p>
+          </div>
+          <span class="committee-members-badge">4 members</span>
+        </div>
+
+        <div class="committee-card">
+          <div class="committee-icon"></div>
+          <div class="committee-info">
+            <p class="committee-name">Risk Committee</p>
+            <p class="committee-description">Risk management, assessment, and mitigation strategies</p>
+          </div>
+          <span class="committee-members-badge">8 members</span>
+        </div>
+
+        <div class="committee-card">
+          <div class="committee-icon"></div>
+          <div class="committee-info">
+            <p class="committee-name">Nomination &amp; Remuneration Committee</p>
+            <p class="committee-description">Board appointments, succession planning, and compensation</p>
+          </div>
+          <span class="committee-members-badge">2 members</span>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
 </main>
 </div>
