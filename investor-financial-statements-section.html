@@ -3,92 +3,356 @@
 
 <div class="kyan-investor-dashboard-wrapper kyan-investor-financial-statements-section">
 <style>
-.kyan-investor-financial-statements-section { all: initial; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important; display: block !important; box-sizing: border-box !important; position: relative !important; isolation: isolate; width: 100% !important; margin: 0 !important; padding: 0 !important; }
-.kyan-investor-financial-statements-section *,.kyan-investor-financial-statements-section *::before,.kyan-investor-financial-statements-section *::after { box-sizing: border-box !important; }
-.kyan-investor-financial-statements-section .dashboard-main { flex: 1; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,.08); overflow: hidden; display: flex; flex-direction: column; }
-.kyan-investor-financial-statements-section .dashboard-header { background: linear-gradient(135deg, #2c5f7c 0%, #1e4a5f 100%); color: #fff; padding: 32px 40px; border-radius: 16px 16px 0 0; }
-.kyan-investor-financial-statements-section .page-title { font-size: 26px; font-weight: 600; margin: 0; }
-.kyan-investor-financial-statements-section .dashboard-content { padding: 36px 40px; flex: 1; }
-.kyan-investor-financial-statements-section .search-section { margin-bottom: 32px; }
-.kyan-investor-financial-statements-section .search-container { position: relative; display: flex; align-items: center; max-width: 100%; }
-.kyan-investor-financial-statements-section .search-input { width: 100%; padding: 12px 16px 12px 45px; border: 2px solid #e8ecef; border-radius: 12px; font-size: 14px; background: #fff; }
-.kyan-investor-financial-statements-section .search-input:focus { outline: none; border-color: #4a90e2; box-shadow: 0 0 0 3px rgba(74,144,226,.1); }
-.kyan-investor-financial-statements-section .search-icon { position: absolute; left: 14px; font-size: 18px; color: #6c757d; pointer-events: none; }
-.kyan-investor-financial-statements-section .reports-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
-.kyan-investor-financial-statements-section .report-card { background: #fff; border-radius: 12px; padding: 18px 24px; display: flex; align-items: center; gap: 18px; box-shadow: 0 2px 8px rgba(0,0,0,.06); border: 1px solid #e8ecef; transition: transform .2s ease, box-shadow .2s ease; }
-.kyan-investor-financial-statements-section .report-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
-.kyan-investor-financial-statements-section .report-icon { width: 48px; height: 48px; background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
-.kyan-investor-financial-statements-section .report-info { flex: 1; min-width: 0; }
-.kyan-investor-financial-statements-section .report-title { font-size: 17px; font-weight: 600; color: #1a4d5e; margin: 0 0 6px 0; }
-.kyan-investor-financial-statements-section .report-description { font-size: 13px; color: #6c757d; margin: 0 0 8px 0; }
-.kyan-investor-financial-statements-section .report-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-.kyan-investor-financial-statements-section .report-date { font-size: 13px; color: #6c757d; }
-.kyan-investor-financial-statements-section .download-btn { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all .3s ease; white-space: nowrap; flex-shrink: 0; }
-.kyan-investor-financial-statements-section .download-btn:hover { background: linear-gradient(135deg, #357abd 0%, #2a5f8f 100%); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(74,144,226,.3); }
-.kyan-investor-financial-statements-section .download-icon { font-size: 16px; }
-@media (max-width: 768px) {
-    .kyan-investor-financial-statements-section .dashboard-header { padding: 20px 24px !important; }
-    .kyan-investor-financial-statements-section .page-title { font-size: 20px !important; }
-    .kyan-investor-financial-statements-section .dashboard-content { padding: 24px 20px !important; }
-    .kyan-investor-financial-statements-section .reports-grid { grid-template-columns: 1fr !important; }
-    .kyan-investor-financial-statements-section .report-card { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
-    .kyan-investor-financial-statements-section .download-btn { width: 100% !important; justify-content: center !important; }
-}
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+  .kyan-investor-financial-statements-section {
+    all: initial;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    isolation: isolate;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .kyan-investor-financial-statements-section *,
+  .kyan-investor-financial-statements-section *::before,
+  .kyan-investor-financial-statements-section *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* Layout */
+  .kyan-investor-financial-statements-section .dashboard-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Header */
+  .kyan-investor-financial-statements-section .dashboard-header {
+    background: #B5EAF3;
+    color: #1a1a1a;
+    width: 100%;
+    height: 61px;
+    padding: 0 10px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kyan-investor-financial-statements-section .page-title {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0%;
+    margin: 0;
+    color: #1a1a1a;
+  }
+
+  /* Content */
+  .kyan-investor-financial-statements-section .dashboard-content {
+    padding: 36px 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  /* Search */
+  .kyan-investor-financial-statements-section .search-section {
+    margin-bottom: 24px;
+  }
+  .kyan-investor-financial-statements-section .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 241px;
+  }
+  .kyan-investor-financial-statements-section .search-input {
+    width: 241px;
+    height: 36px;
+    padding: 4px 12px 4px 40px;
+    border: 0.55px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    background: #ffffff;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .kyan-investor-financial-statements-section .search-input:focus {
+    border-color: #00B4CD;
+  }
+  .kyan-investor-financial-statements-section .search-icon {
+    position: absolute;
+    left: 14px;
+    font-size: 14px;
+    color: #9ca3af;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  /* Grid */
+  .kyan-investor-financial-statements-section .reports-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Card */
+  .kyan-investor-financial-statements-section .report-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .kyan-investor-financial-statements-section .report-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  }
+
+  /* Icon */
+  .kyan-investor-financial-statements-section .report-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background-color: #00B4CD;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M6 2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M7 7h6' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M7 10h6' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M7 13h4' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    border-radius: 10px;
+  }
+
+  /* Info */
+  .kyan-investor-financial-statements-section .report-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .kyan-investor-financial-statements-section .report-title {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #101828;
+    margin: 0 0 2px 0;
+    display: block;
+  }
+  .kyan-investor-financial-statements-section .report-description {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 4px 0;
+    font-weight: 400;
+  }
+  .kyan-investor-financial-statements-section .report-date {
+    font-size: 13px;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .kyan-investor-financial-statements-section .report-date::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3.9989 0.999695V2.99912' stroke='%236A7282' stroke-width='0.999714' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.99768 0.999695V2.99912' stroke='%236A7282' stroke-width='0.999714' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.49723 1.99945H2.49923C1.9471 1.99945 1.49951 2.44704 1.49951 2.99916V9.99717C1.49951 10.5493 1.9471 10.9969 2.49923 10.9969H9.49723C10.0494 10.9969 10.4969 10.5493 10.4969 9.99717V2.99916C10.4969 2.44704 10.0494 1.99945 9.49723 1.99945Z' stroke='%236A7282' stroke-width='0.999714' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.49951 4.9986H10.4969' stroke='%236A7282' stroke-width='0.999714' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  /* Download button */
+  .kyan-investor-financial-statements-section .download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 11px;
+    background: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 111px;
+    height: 36px;
+    transition: all 0.2s ease;
+  }
+  .kyan-investor-financial-statements-section .download-btn:hover {
+    background: #f5f5f5;
+    border-color: rgba(0,0,0,0.2);
+  }
+  .kyan-investor-financial-statements-section .download-btn:active {
+    opacity: 0.8;
+  }
+  .kyan-investor-financial-statements-section .download-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M7.99915 9.99897V1.99982' stroke='%230A0A0A' stroke-width='1.33319' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.9985 9.99896V12.6653C13.9985 13.0189 13.8581 13.358 13.6081 13.6081C13.358 13.8581 13.0189 13.9985 12.6654 13.9985H3.33301C2.97942 13.9985 2.64032 13.8581 2.3903 13.6081C2.14028 13.358 1.99982 13.0189 1.99982 12.6653V9.99896' stroke='%230A0A0A' stroke-width='1.33319' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.6662 6.66595L7.99918 9.99893L11.3322 6.66595' stroke='%230A0A0A' stroke-width='1.33319' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .kyan-investor-financial-statements-section .dashboard-content {
+      padding: 28px 24px;
+    }
+    .kyan-investor-financial-statements-section .reports-grid {
+      gap: 12px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .kyan-investor-financial-statements-section .dashboard-main {
+      gap: 16px;
+    }
+    .kyan-investor-financial-statements-section .dashboard-header {
+      height: auto !important;
+      padding: 14px 16px !important;
+      border-radius: 10px;
+    }
+    .kyan-investor-financial-statements-section .page-title {
+      font-size: 18px !important;
+    }
+    .kyan-investor-financial-statements-section .dashboard-content {
+      padding: 20px 16px !important;
+      border-radius: 12px;
+    }
+    .kyan-investor-financial-statements-section .search-container,
+    .kyan-investor-financial-statements-section .search-input {
+      width: 100% !important;
+    }
+    .kyan-investor-financial-statements-section .reports-grid {
+      grid-template-columns: 1fr !important;
+      gap: 10px;
+    }
+    .kyan-investor-financial-statements-section .report-card {
+      padding: 14px 16px;
+      flex-wrap: wrap;
+    }
+    .kyan-investor-financial-statements-section .report-title {
+      font-size: 14px;
+    }
+    .kyan-investor-financial-statements-section .download-btn {
+      width: 100% !important;
+    }
+  }
+
+  /* Extra small */
+  @media (max-width: 400px) {
+    .kyan-investor-financial-statements-section .report-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 </style>
+
 <main class="dashboard-main">
-    <header class="dashboard-header">
-        <h1 class="page-title">Financial Statements and Disclosures</h1>
-    </header>
-    <div class="dashboard-content">
-        <section class="search-section">
-            <div class="search-container">
-                <span class="search-icon">&#128269;</span>
-                <input type="search" class="search-input" placeholder="Search" aria-label="Search" id="kyan-fs-search">
-            </div>
-        </section>
-        <section class="reports-grid-section">
-            <div class="reports-grid" id="kyan-fs-list">
-                <div class="report-card">
-                    <div class="report-icon">&#128196;</div>
-                    <div class="report-info">
-                        <h3 class="report-title">Balance Sheet Q3 2024</h3>
-                        <p class="report-description">Financial Statement</p>
-                        <div class="report-meta"><span class="report-date">&#128197; 15-10-2025</span></div>
-                    </div>
-                    <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Balance Sheet Q3 2024"><span class="download-icon">&#11015;</span> Download</button>
-                </div>
-                <div class="report-card">
-                    <div class="report-icon">&#128196;</div>
-                    <div class="report-info">
-                        <h3 class="report-title">Cash Flow Statement Q3 2024</h3>
-                        <p class="report-description">Financial Statement</p>
-                        <div class="report-meta"><span class="report-date">&#128197; 15-10-2025</span></div>
-                    </div>
-                    <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Cash Flow Statement Q3 2024"><span class="download-icon">&#11015;</span> Download</button>
-                </div>
-                <div class="report-card">
-                    <div class="report-icon">&#128196;</div>
-                    <div class="report-info">
-                        <h3 class="report-title">Material Disclosure - Merger Agreement</h3>
-                        <p class="report-description">Disclosure</p>
-                        <div class="report-meta"><span class="report-date">&#128197; 15-10-2025</span></div>
-                    </div>
-                    <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Material Disclosure"><span class="download-icon">&#11015;</span> Download</button>
-                </div>
-                <div class="report-card">
-                    <div class="report-icon">&#128196;</div>
-                    <div class="report-info">
-                        <h3 class="report-title">External Audit Report 2024</h3>
-                        <p class="report-description">Audit Report</p>
-                        <div class="report-meta"><span class="report-date">&#128197; 15-10-2025</span></div>
-                    </div>
-                    <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download External Audit Report 2024"><span class="download-icon">&#11015;</span> Download</button>
-                </div>
-            </div>
-        </section>
-    </div>
+  <header class="dashboard-header">
+    <h1 class="page-title">Financial Statements</h1>
+  </header>
+
+  <div class="dashboard-content">
+    <section class="search-section">
+      <div class="search-container">
+        <span class="search-icon">&#128269;</span>
+        <input type="search" class="search-input" placeholder="Search" aria-label="Search" id="kyan-fs-search">
+      </div>
+    </section>
+
+    <section class="reports-grid-section">
+      <div class="reports-grid" id="kyan-fs-list">
+        <div class="report-card">
+          <div class="report-icon"></div>
+          <div class="report-info">
+            <span class="report-title">Balance Sheet Q3 2024</span>
+            <p class="report-description">Financial Statement</p>
+            <span class="report-date">15-10-2025</span>
+          </div>
+          <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Balance Sheet Q3 2024">
+            <span class="download-icon"></span> Download
+          </button>
+        </div>
+        <div class="report-card">
+          <div class="report-icon"></div>
+          <div class="report-info">
+            <span class="report-title">Cash Flow Statement Q3 2024</span>
+            <p class="report-description">Financial Statement</p>
+            <span class="report-date">15-10-2025</span>
+          </div>
+          <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Cash Flow Statement Q3 2024">
+            <span class="download-icon"></span> Download
+          </button>
+        </div>
+        <div class="report-card">
+          <div class="report-icon"></div>
+          <div class="report-info">
+            <span class="report-title">Material Disclosure - Merger Agreement</span>
+            <p class="report-description">Disclosure</p>
+            <span class="report-date">15-10-2025</span>
+          </div>
+          <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Material Disclosure">
+            <span class="download-icon"></span> Download
+          </button>
+        </div>
+        <div class="report-card">
+          <div class="report-icon"></div>
+          <div class="report-info">
+            <span class="report-title">External Audit Report 2024</span>
+            <p class="report-description">Audit Report</p>
+            <span class="report-date">15-10-2025</span>
+          </div>
+          <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download External Audit Report 2024">
+            <span class="download-icon"></span> Download
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
+
 <script>
-(function(){ var w=document.querySelector('.kyan-investor-financial-statements-section'); if(!w) return; var s=w.querySelector('#kyan-fs-search'), l=w.querySelector('#kyan-fs-list'); if(s&&l){ s.addEventListener('input',function(){ var q=(this.value||'').toLowerCase(); l.querySelectorAll('.report-card').forEach(function(c){ var t=(c.querySelector('.report-title')&&c.querySelector('.report-title').textContent)||'', d=(c.querySelector('.report-description')&&c.querySelector('.report-description').textContent)||''; c.style.display=!q||t.toLowerCase().indexOf(q)>=0||d.toLowerCase().indexOf(q)>=0?'':'none'; }); }); } w.querySelectorAll('.download-btn').forEach(function(btn){ btn.addEventListener('click',function(){ var u=this.getAttribute('data-pdf-url'); if(u&&u!=='#') window.open(u,'_blank'); else alert('Download link will be updated.'); }); }); })();
+(function() {
+  var w = document.querySelector('.kyan-investor-financial-statements-section');
+  if (!w) return;
+  var s = w.querySelector('#kyan-fs-search');
+  var l = w.querySelector('#kyan-fs-list');
+  if (s && l) {
+    s.addEventListener('input', function() {
+      var q = (this.value || '').toLowerCase();
+      l.querySelectorAll('.report-card').forEach(function(c) {
+        var t = (c.querySelector('.report-title') && c.querySelector('.report-title').textContent) || '';
+        var d = (c.querySelector('.report-description') && c.querySelector('.report-description').textContent) || '';
+        c.style.display = !q || t.toLowerCase().indexOf(q) >= 0 || d.toLowerCase().indexOf(q) >= 0 ? '' : 'none';
+      });
+    });
+  }
+  w.querySelectorAll('.download-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var u = this.getAttribute('data-pdf-url');
+      if (u && u !== '#') window.open(u, '_blank');
+      else alert('Download link will be updated.');
+    });
+  });
+})();
 </script>
 </div>
