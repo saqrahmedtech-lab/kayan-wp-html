@@ -2,387 +2,561 @@
 <!-- Include via shortcode [kyan_investor_reports] -->
 
 <div class="kyan-investor-dashboard-wrapper kyan-investor-reports-section">
-<style>
-.kyan-investor-reports-section {
-    all: initial;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
-    display: block !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    isolation: isolate;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-.kyan-investor-reports-section *,
-.kyan-investor-reports-section *::before,
-.kyan-investor-reports-section *::after { box-sizing: border-box !important; }
+  <style>
+    .kyan-investor-reports-section {
+      all: initial;
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, sans-serif !important;
+      display: block !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      isolation: isolate;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .kyan-investor-reports-section *,
+    .kyan-investor-reports-section *::before,
+    .kyan-investor-reports-section *::after {
+      box-sizing: border-box !important;
+    }
 
-.kyan-investor-reports-section .dashboard-main {
-    flex: 1;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-.kyan-investor-reports-section .dashboard-header {
-    background: linear-gradient(135deg, #2c5f7c 0%, #1e4a5f 100%);
-    color: #ffffff;
-    padding: 32px 40px;
-    border-radius: 16px 16px 0 0;
-}
-.kyan-investor-reports-section .page-title {
-    font-size: 26px;
-    font-weight: 600;
-    margin: 0;
-    letter-spacing: 0.3px;
-}
-.kyan-investor-reports-section .dashboard-content {
-    padding: 36px 40px;
-    flex: 1;
-}
+    .kyan-investor-reports-section .dashboard-main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .kyan-investor-reports-section .dashboard-header {
+      background: #b5eaf3;
+      color: #1a1a1a;
+      width: 100%;
+      height: 61px;
+      padding: 0 10px;
+      border-radius: 12px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .kyan-investor-reports-section .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 0.3px;
+      color: #1a1a1a;
+    }
+    .kyan-investor-reports-section .dashboard-content {
+      padding: 36px 40px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
 
-.kyan-investor-reports-section .kpi-section { margin-bottom: 40px; }
-.kyan-investor-reports-section .kpi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    margin-top: 24px;
-}
-.kyan-investor-reports-section .kpi-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 22px 24px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    border: 1px solid #e8ecef;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.kyan-investor-reports-section .kpi-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
-.kyan-investor-reports-section .kpi-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 14px;
-}
-.kyan-investor-reports-section .kpi-label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #6c757d;
-    margin: 0;
-    flex: 1;
-}
-.kyan-investor-reports-section .kpi-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-.kyan-investor-reports-section .kpi-badge.positive {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-.kyan-investor-reports-section .kpi-value {
-    font-size: 30px;
-    font-weight: 700;
-    color: #1a4d5e;
-    margin-bottom: 6px;
-    line-height: 1.2;
-}
-.kyan-investor-reports-section .kpi-period {
-    font-size: 13px;
-    color: #6c757d;
-    font-weight: 500;
-}
+    /* KPI Cards */
+    .kyan-investor-reports-section .kpi-section {
+      margin-bottom: 40px;
+    }
+    .kyan-investor-reports-section .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .kyan-investor-reports-section .kpi-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      border: 1px solid #e5e7eb;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+    .kyan-investor-reports-section .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+    .kyan-investor-reports-section .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .kyan-investor-reports-section .kpi-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: #6b7280;
+      margin: 0;
+      flex: 1;
+    }
+    .kyan-investor-reports-section .kpi-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 4px;
+      gap: 3.99px;
+      height: 24px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 1;
+    }
+    .kyan-investor-reports-section .kpi-badge.positive {
+      background-color: #dcf6e8;
+      color: #16a34a;
+    }
+    .kyan-investor-reports-section .kpi-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .kyan-investor-reports-section .kpi-period {
+      font-size: 13px;
+      color: #9ca3af;
+      font-weight: 400;
+    }
 
-.kyan-investor-reports-section .reports-section { margin-top: 32px; }
-.kyan-investor-reports-section .reports-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-.kyan-investor-reports-section .section-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #1a4d5e;
-    margin: 0;
-}
-.kyan-investor-reports-section .search-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    min-width: 200px;
-}
-.kyan-investor-reports-section .search-input {
-    width: 100%;
-    padding: 12px 16px 12px 45px;
-    border: 2px solid #e8ecef;
-    border-radius: 12px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-    background-color: #ffffff;
-}
-.kyan-investor-reports-section .search-input:focus {
-    outline: none;
-    border-color: #4a90e2;
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
-}
-.kyan-investor-reports-section .search-icon {
-    position: absolute;
-    left: 14px;
-    font-size: 18px;
-    color: #6c757d;
-    pointer-events: none;
-}
-.kyan-investor-reports-section .reports-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-.kyan-investor-reports-section .report-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 18px 24px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    border: 1px solid #e8ecef;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.kyan-investor-reports-section .report-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
-.kyan-investor-reports-section .report-icon {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    flex-shrink: 0;
-}
-.kyan-investor-reports-section .report-info { flex: 1; min-width: 0; }
-.kyan-investor-reports-section .report-title {
-    font-size: 17px;
-    font-weight: 600;
-    color: #1a4d5e;
-    margin: 0 0 6px 0;
-    display: block;
-    line-height: 1.4;
-}
-.kyan-investor-reports-section .report-meta {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-.kyan-investor-reports-section .report-type {
-    display: inline-block;
-    padding: 4px 12px;
-    background-color: #e8ecef;
-    color: #495057;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-.kyan-investor-reports-section .report-date {
-    font-size: 13px;
-    color: #6c757d;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.kyan-investor-reports-section .download-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-.kyan-investor-reports-section .download-btn:hover {
-    background: linear-gradient(135deg, #357abd 0%, #2a5f8f 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
-}
-.kyan-investor-reports-section .download-btn:active { transform: translateY(0); }
-.kyan-investor-reports-section .download-icon { font-size: 16px; }
+    /* Reports Section */
+    .kyan-investor-reports-section .reports-section {
+      margin-top: 32px;
+    }
+    .kyan-investor-reports-section .reports-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .kyan-investor-reports-section .section-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a4d5e;
+      margin: 0;
+    }
+    .kyan-investor-reports-section .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 241px;
+    }
+    .kyan-investor-reports-section .search-input {
+      width: 241px;
+      height: 36px;
+      padding: 4px 12px 4px 40px;
+      border: 0.55px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #ffffff;
+      color: #333;
+      outline: none;
+      transition: border-color 0.2s ease;
+      opacity: 1;
+    }
+    .kyan-investor-reports-section .search-input:focus {
+      border-color: #00b4cd;
+    }
+    .kyan-investor-reports-section .search-icon {
+      position: absolute;
+      left: 14px;
+      font-size: 14px;
+      color: #9ca3af;
+      pointer-events: none;
+      line-height: 1;
+    }
 
-@media (max-width: 768px) {
-    .kyan-investor-reports-section .dashboard-header { padding: 20px 24px !important; }
-    .kyan-investor-reports-section .page-title { font-size: 20px !important; }
-    .kyan-investor-reports-section .dashboard-content { padding: 24px 20px !important; }
-    .kyan-investor-reports-section .reports-header { flex-direction: column !important; align-items: flex-start !important; }
-    .kyan-investor-reports-section .report-card { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
-    .kyan-investor-reports-section .download-btn { width: 100% !important; justify-content: center !important; }
-    .kyan-investor-reports-section .kpi-grid { grid-template-columns: 1fr !important; }
-}
-</style>
+    /* Report List */
+    .kyan-investor-reports-section .reports-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .kyan-investor-reports-section .report-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid #e8ecef;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+    .kyan-investor-reports-section .report-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+    .kyan-investor-reports-section .report-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background-color: #00b4cd;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M8.84998 16.85C10.9717 16.85 13.0065 16.0071 14.5068 14.5068C16.0071 13.0065 16.85 10.9717 16.85 8.84998C16.85 6.72824 16.0071 4.69341 14.5068 3.19312C13.0065 1.69283 10.9717 0.849976 8.84998 0.849976C6.72824 0.849976 4.69341 1.69283 3.19312 3.19312C1.69283 4.69341 0.849976 6.72824 0.849976 8.84998C0.849976 10.9717 1.69283 13.0065 3.19312 14.5068C4.69341 16.0071 6.72824 16.85 8.84998 16.85Z' stroke='white' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.86707 0.862915V8.47553L14.8671 13.8629' stroke='white' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 18px 18px;
+      border-radius: 10px;
+    }
+    .kyan-investor-reports-section .report-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .kyan-investor-reports-section .report-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1a4d5e;
+      margin: 0 0 4px 0;
+      display: block;
+      line-height: 1.4;
+    }
+    .kyan-investor-reports-section .report-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-top: 2px;
+    }
+    .kyan-investor-reports-section .report-type {
+      font-size: 13px;
+      color: #6c757d;
+      font-weight: 400;
+    }
+    .kyan-investor-reports-section .report-date {
+      font-size: 13px;
+      color: #6c757d;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .kyan-investor-reports-section .report-date::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      min-width: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3.9989 0.999695V2.99912' stroke='%236A7282' stroke-width='0.999714' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.99768 0.999695V2.99912' stroke='%236A7282' stroke-width='0.999714' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.49723 1.99945H2.49923C1.9471 1.99945 1.49951 2.44704 1.49951 2.99916V9.99717C1.49951 10.5493 1.9471 10.9969 2.49923 10.9969H9.49723C10.0494 10.9969 10.4969 10.5493 10.4969 9.99717V2.99916C10.4969 2.44704 10.0494 1.99945 9.49723 1.99945Z' stroke='%236A7282' stroke-width='0.999714' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.49951 4.9986H10.4969' stroke='%236A7282' stroke-width='0.999714' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    .kyan-investor-reports-section .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 11px;
+      background: #ffffff;
+      color: #1a1a1a;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 111px;
+      height: 36px;
+    }
+    .kyan-investor-reports-section .download-btn {
+      transition: all 0.2s ease;
+    }
+    .kyan-investor-reports-section .download-btn:hover {
+      background: #f5f5f5;
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+    .kyan-investor-reports-section .download-btn:active {
+      opacity: 0.8;
+    }
+    .kyan-investor-reports-section .download-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M7.99915 9.99897V1.99982' stroke='%230A0A0A' stroke-width='1.33319' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.9985 9.99896V12.6653C13.9985 13.0189 13.8581 13.358 13.6081 13.6081C13.358 13.8581 13.0189 13.9985 12.6654 13.9985H3.33301C2.97942 13.9985 2.64032 13.8581 2.3903 13.6081C2.14028 13.358 1.99982 13.0189 1.99982 12.6653V9.99896' stroke='%230A0A0A' stroke-width='1.33319' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.6662 6.66595L7.99918 9.99893L11.3322 6.66595' stroke='%230A0A0A' stroke-width='1.33319' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
 
-<main class="dashboard-main">
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .kyan-investor-reports-section .dashboard-content {
+        padding: 28px 24px;
+      }
+      .kyan-investor-reports-section .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .kyan-investor-reports-section .kpi-value {
+        font-size: 24px;
+      }
+      .kyan-investor-reports-section .search-container,
+      .kyan-investor-reports-section .search-input {
+        width: 200px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .kyan-investor-reports-section .dashboard-main {
+        gap: 16px;
+      }
+      .kyan-investor-reports-section .dashboard-header {
+        height: auto !important;
+        padding: 14px 16px !important;
+        border-radius: 10px;
+      }
+      .kyan-investor-reports-section .page-title {
+        font-size: 18px !important;
+      }
+      .kyan-investor-reports-section .dashboard-content {
+        padding: 20px 16px !important;
+        border-radius: 12px;
+      }
+      .kyan-investor-reports-section .kpi-section {
+        margin-bottom: 28px;
+      }
+      .kyan-investor-reports-section .kpi-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px;
+      }
+      .kyan-investor-reports-section .kpi-card {
+        padding: 14px 16px;
+        border-radius: 12px;
+      }
+      .kyan-investor-reports-section .kpi-label {
+        font-size: 11px;
+      }
+      .kyan-investor-reports-section .kpi-value {
+        font-size: 20px !important;
+      }
+      .kyan-investor-reports-section .kpi-period {
+        font-size: 11px;
+      }
+      .kyan-investor-reports-section .kpi-badge {
+        font-size: 10px;
+        height: 20px;
+      }
+      .kyan-investor-reports-section .reports-section {
+        margin-top: 20px;
+      }
+      .kyan-investor-reports-section .reports-header {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px;
+      }
+      .kyan-investor-reports-section .section-title {
+        font-size: 17px;
+      }
+      .kyan-investor-reports-section .search-container,
+      .kyan-investor-reports-section .search-input {
+        width: 100% !important;
+      }
+      .kyan-investor-reports-section .reports-list {
+        gap: 10px;
+      }
+      .kyan-investor-reports-section .report-card {
+        padding: 14px 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .kyan-investor-reports-section .report-info {
+        flex: 1 1 calc(100% - 60px);
+        min-width: 0;
+      }
+      .kyan-investor-reports-section .report-title {
+        font-size: 15px;
+      }
+      .kyan-investor-reports-section .download-btn {
+        width: 100% !important;
+        height: 40px;
+      }
+    }
+
+    /* Extra small */
+    @media (max-width: 400px) {
+      .kyan-investor-reports-section .kpi-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .kyan-investor-reports-section .kpi-value {
+        font-size: 22px !important;
+      }
+    }
+  </style>
+
+  <main class="dashboard-main">
     <header class="dashboard-header">
-        <h1 class="page-title">Reports and Key performance indicators</h1>
+      <h1 class="page-title">Reports</h1>
     </header>
 
     <div class="dashboard-content">
-        <!-- Key Performance Indicators Section -->
-        <section class="kpi-section">
-            <div class="kpi-grid">
-                <div class="kpi-card">
-                    <div class="kpi-header">
-                        <h3 class="kpi-label">Total Revenue</h3>
-                        <span class="kpi-badge positive">+18.3%</span>
-                    </div>
-                    <div class="kpi-value">$165.2M</div>
-                    <div class="kpi-period">Q3 2024</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-header">
-                        <h3 class="kpi-label">Total Revenue</h3>
-                        <span class="kpi-badge positive">+18.3%</span>
-                    </div>
-                    <div class="kpi-value">24.5%</div>
-                    <div class="kpi-period">Q3 2024</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-header">
-                        <h3 class="kpi-label">Total Revenue</h3>
-                        <span class="kpi-badge positive">+18.3%</span>
-                    </div>
-                    <div class="kpi-value">8,432</div>
-                    <div class="kpi-period">As of Dec 2025</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-header">
-                        <h3 class="kpi-label">EPS (Earnings Per Share)</h3>
-                        <span class="kpi-badge positive">+18.3%</span>
-                    </div>
-                    <div class="kpi-value">$2.85</div>
-                    <div class="kpi-period">Q3 2024</div>
-                </div>
+      <section class="kpi-section">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <h3 class="kpi-label">Total Revenue</h3>
+              <span class="kpi-badge positive">+18.3%</span>
             </div>
-        </section>
+            <div class="kpi-value">$165.2M</div>
+            <div class="kpi-period">Q3 2024</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <h3 class="kpi-label">Total Revenue</h3>
+              <span class="kpi-badge positive">+18.3%</span>
+            </div>
+            <div class="kpi-value">24.5%</div>
+            <div class="kpi-period">Q3 2024</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <h3 class="kpi-label">Total Revenue</h3>
+              <span class="kpi-badge positive">+18.3%</span>
+            </div>
+            <div class="kpi-value">8,432</div>
+            <div class="kpi-period">As of Dec 2025</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <h3 class="kpi-label">EPS (Earnings Per Share)</h3>
+              <span class="kpi-badge positive">+18.3%</span>
+            </div>
+            <div class="kpi-value">$2.85</div>
+            <div class="kpi-period">Q3 2024</div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Annual and Quarterly Reports Section -->
-        <section class="reports-section">
-            <div class="reports-header">
-                <h2 class="section-title">Annual and Quarterly Reports</h2>
-                <div class="search-container">
-                    <span class="search-icon">&#128269;</span>
-                    <input type="search" class="search-input" placeholder="Search reports" aria-label="Search reports" id="kyan-reports-search">
-                </div>
-            </div>
+      <section class="reports-section">
+        <div class="reports-header">
+          <h2 class="section-title">Annual and Quarterly Reports</h2>
+          <div class="search-container">
+            <span class="search-icon">&#128269;</span>
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search reports"
+              aria-label="Search reports"
+              id="kyan-reports-search"
+            />
+          </div>
+        </div>
 
-            <div class="reports-list" id="kyan-reports-list">
-                <div class="report-card">
-                    <div class="report-icon">&#128336;</div>
-                    <div class="report-info">
-                        <h3 class="report-title">Annual Report 2024</h3>
-                        <div class="report-meta">
-                            <span class="report-type">Annual</span>
-                            <span class="report-date">&#128197; 15-10-2020</span>
-                        </div>
-                    </div>
-                    <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Annual Report 2024">
-                        <span class="download-icon">&#11015;</span>
-                        Download
-                    </button>
-                </div>
-                <div class="report-card">
-                    <div class="report-icon">&#128336;</div>
-                    <div class="report-info">
-                        <h3 class="report-title">Q3 2024 Financial Report</h3>
-                        <div class="report-meta">
-                            <span class="report-type">Quarterly</span>
-                            <span class="report-date">&#128197; 16-10-2025</span>
-                        </div>
-                    </div>
-                    <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Q3 2024 Financial Report">
-                        <span class="download-icon">&#11015;</span>
-                        Download
-                    </button>
-                </div>
-                <div class="report-card">
-                    <div class="report-icon">&#128336;</div>
-                    <div class="report-info">
-                        <h3 class="report-title">Q2 2024 Financial Report</h3>
-                        <div class="report-meta">
-                            <span class="report-type">Quarterly</span>
-                            <span class="report-date">&#128197; 15-10-2020</span>
-                        </div>
-                    </div>
-                    <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Q2 2024 Financial Report">
-                        <span class="download-icon">&#11015;</span>
-                        Download
-                    </button>
-                </div>
-                <div class="report-card">
-                    <div class="report-icon">&#128336;</div>
-                    <div class="report-info">
-                        <h3 class="report-title">Annual Report 2023</h3>
-                        <div class="report-meta">
-                            <span class="report-type">Annual</span>
-                            <span class="report-date">&#128197; 16-10-2025</span>
-                        </div>
-                    </div>
-                    <button type="button" class="download-btn" data-pdf-url="#" aria-label="Download Annual Report 2023">
-                        <span class="download-icon">&#11015;</span>
-                        Download
-                    </button>
-                </div>
+        <div class="reports-list" id="kyan-reports-list">
+          <div class="report-card">
+            <div class="report-icon"></div>
+            <div class="report-info">
+              <span class="report-title">Annual Report 2024</span>
+              <div class="report-meta">
+                <span class="report-type">Annual</span>
+                <span class="report-date">15-10-2025</span>
+              </div>
             </div>
-        </section>
+            <button
+              type="button"
+              class="download-btn"
+              data-pdf-url="#"
+              aria-label="Download Annual Report 2024"
+            >
+              <span class="download-icon"></span>
+              Download
+            </button>
+          </div>
+          <div class="report-card">
+            <div class="report-icon"></div>
+            <div class="report-info">
+              <span class="report-title">Q3 2024 Financial Report</span>
+              <div class="report-meta">
+                <span class="report-type">Quarterly</span>
+                <span class="report-date">15-10-2025</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="download-btn"
+              data-pdf-url="#"
+              aria-label="Download Q3 2024 Financial Report"
+            >
+              <span class="download-icon"></span>
+              Download
+            </button>
+          </div>
+          <div class="report-card">
+            <div class="report-icon"></div>
+            <div class="report-info">
+              <span class="report-title">Q2 2024 Financial Report</span>
+              <div class="report-meta">
+                <span class="report-type">Quarterly</span>
+                <span class="report-date">15-10-2025</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="download-btn"
+              data-pdf-url="#"
+              aria-label="Download Q2 2024 Financial Report"
+            >
+              <span class="download-icon"></span>
+              Download
+            </button>
+          </div>
+          <div class="report-card">
+            <div class="report-icon"></div>
+            <div class="report-info">
+              <span class="report-title">Annual Report 2023</span>
+              <div class="report-meta">
+                <span class="report-type">Annual</span>
+                <span class="report-date">15-10-2025</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="download-btn"
+              data-pdf-url="#"
+              aria-label="Download Annual Report 2023"
+            >
+              <span class="download-icon"></span>
+              Download
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
-</main>
+  </main>
 
-<script>
-(function() {
-    var wrapper = document.querySelector('.kyan-investor-reports-section');
-    if (!wrapper) return;
-    var searchInput = wrapper.querySelector('#kyan-reports-search');
-    var list = wrapper.querySelector('#kyan-reports-list');
-    if (searchInput && list) {
-        searchInput.addEventListener('input', function() {
-            var q = (this.value || '').toLowerCase();
-            var cards = list.querySelectorAll('.report-card');
-            cards.forEach(function(card) {
-                var title = (card.querySelector('.report-title') && card.querySelector('.report-title').textContent) || '';
-                var type = (card.querySelector('.report-type') && card.querySelector('.report-type').textContent) || '';
-                var show = !q || title.toLowerCase().indexOf(q) >= 0 || type.toLowerCase().indexOf(q) >= 0;
-                card.style.display = show ? '' : 'none';
-            });
+  <script>
+    (function () {
+      var wrapper = document.querySelector(".kyan-investor-reports-section");
+      if (!wrapper) return;
+      var searchInput = wrapper.querySelector("#kyan-reports-search");
+      var list = wrapper.querySelector("#kyan-reports-list");
+      if (searchInput && list) {
+        searchInput.addEventListener("input", function () {
+          var q = (this.value || "").toLowerCase();
+          var cards = list.querySelectorAll(".report-card");
+          cards.forEach(function (card) {
+            var title =
+              (card.querySelector(".report-title") &&
+                card.querySelector(".report-title").textContent) ||
+              "";
+            var type =
+              (card.querySelector(".report-type") &&
+                card.querySelector(".report-type").textContent) ||
+              "";
+            var show =
+              !q ||
+              title.toLowerCase().indexOf(q) >= 0 ||
+              type.toLowerCase().indexOf(q) >= 0;
+            card.style.display = show ? "" : "none";
+          });
         });
-    }
-    wrapper.querySelectorAll('.download-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var url = this.getAttribute('data-pdf-url');
-            if (url && url !== '#') window.open(url, '_blank'); else alert('Download link will be updated.');
+      }
+      wrapper.querySelectorAll(".download-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var url = this.getAttribute("data-pdf-url");
+          if (url && url !== "#") window.open(url, "_blank");
+          else alert("Download link will be updated.");
         });
-    });
-})();
-</script>
+      });
+    })();
+  </script>
 </div>
