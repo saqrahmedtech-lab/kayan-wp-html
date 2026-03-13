@@ -1,0 +1,319 @@
+<div class="kyan-landing-wrapper">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+    @import url("https://api.fontshare.com/v2/css?f[]=switzer@600&display=swap");
+
+    .kyan-landing-wrapper {
+      all: initial;
+      font-family:
+        "DM Sans",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif !important;
+      display: block !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      color: #111827;
+    }
+    .kyan-landing-wrapper *,
+    .kyan-landing-wrapper *::before,
+    .kyan-landing-wrapper *::after {
+      box-sizing: border-box !important;
+    }
+
+    /* ── Shared section styles ── */
+    .kyan-landing-section {
+      padding: 80px 60px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-direction: row;
+    }
+    .kyan-landing-section.reverse {
+      flex-direction: row-reverse;
+    }
+    .kyan-landing-section .section-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .kyan-landing-section .section-media {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      overflow: visible;
+    }
+
+    /* Label */
+    .kyan-section-label {
+      display: inline-block;
+      background: none;
+      padding: 0;
+      font-family: "Switzer", "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: 0%;
+      color: #00b4ce;
+      margin-bottom: 16px;
+    }
+
+    /* Headings */
+    .kyan-section-heading {
+      font-family: "DM Sans", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #111827;
+      margin: 0 0 20px 0;
+      letter-spacing: -0.5px;
+    }
+    .kyan-section-body {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #6b7280;
+      margin: 0 0 28px 0;
+      max-width: 480px;
+    }
+
+    /* Social icons row */
+    .kyan-social-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .kyan-social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+      text-decoration: none;
+    }
+    .kyan-social-btn:hover {
+      background: #00b4cd;
+      border-color: #00b4cd;
+    }
+    .kyan-social-btn:hover .kyan-social-icon {
+      filter: brightness(0) invert(1);
+    }
+    .kyan-social-icon {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    /* ── Mockup placeholders ── */
+    .kyan-phone-mockup {
+      width: 260px;
+      height: 520px;
+      background: #1a1a2e;
+      border-radius: 36px;
+      border: 8px solid #2d2d44;
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .kyan-phone-mockup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 28px;
+    }
+    .kyan-phone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 24px;
+      background: #1a1a2e;
+      border-radius: 0 0 16px 16px;
+      z-index: 2;
+    }
+    .kyan-phone-screen-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #00b4cd22 0%, #00b4cd08 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .kyan-phone-screen-placeholder .kyan-app-logo {
+      opacity: 0.4;
+      font-size: 28px;
+      font-weight: 700;
+      color: #00b4cd;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .kyan-tablet-mockup {
+      width: 380px;
+      height: 480px;
+      background: #1a1a2e;
+      border-radius: 20px;
+      border: 8px solid #2d2d44;
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .kyan-tablet-mockup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .kyan-tablet-screen-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #00b4cd22 0%, #00b4cd08 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .kyan-landing-section {
+        padding: 60px 40px;
+        gap: 40px;
+      }
+      .kyan-section-heading {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .kyan-landing-section,
+      .kyan-landing-section.reverse {
+        flex-direction: column !important;
+        padding: 48px 24px;
+        gap: 36px;
+      }
+      .kyan-landing-section .section-text { order: 1; }
+      .kyan-landing-section .section-media { order: 2; width: 100%; }
+      .kyan-section-heading { font-size: 28px; }
+      .kyan-section-body { font-size: 15px; max-width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      .kyan-section-heading { font-size: 24px; }
+      .kyan-landing-section { padding: 36px 16px; }
+    }
+  </style>
+
+  <!-- ── Section 1: Text left, Image right ── -->
+  <div class="kyan-landing-section kyan-section-mission">
+    <div class="section-text">
+      <span class="kyan-section-label">Our Mission</span>
+      <h2 class="kyan-section-heading">
+        Every Cup Is Made With Care and Intention
+      </h2>
+      <p class="kyan-section-body">
+        At Kyan, our mission is to slow things down—one cup at a time. We source
+        thoughtfully, roast with care, and brew for moments that matter. Whether
+        it's your first sip of the day or a pause in between, Kyan exists to
+        bring warmth, balance, and quiet joy into everyday rituals. Coffee, the
+        way it's meant to feel.
+      </p>
+    </div>
+    <div class="section-media">
+      <img
+        src="assets/kayan.png"
+        alt="Kyan Coffee Store"
+        style="
+          width: 100%;
+          max-width: 480px;
+          height: 400px;
+          border-radius: 16px;
+          object-fit: cover;
+          display: block;
+        "
+      />
+    </div>
+  </div>
+
+  <!-- ── Section 2: Image left, Text right ── -->
+  <div class="kyan-landing-section reverse kyan-section-vision">
+    <div class="section-text">
+      <span class="kyan-section-label">Vision</span>
+      <h2 class="kyan-section-heading">
+        Redefining the Way the World Experiences Coffee
+      </h2>
+      <p class="kyan-section-body">
+        Our vision at Kyan is to become a coffee brand that people don't just
+        drink, but return to. We imagine a world where coffee is less about rush
+        and more about presence—where each cup creates space for clarity,
+        creativity, and connection. As we grow, we aim to build a community
+        rooted in mindfulness, quality, and a shared love for simple, well-made
+        things.
+      </p>
+    </div>
+
+    <div class="section-media">
+      <div
+        style="
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 480px;
+          min-height: 560px;
+          overflow: visible;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            background: #b5eaf3;
+            border-radius: 50%;
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          "
+        ></div>
+        <img
+          src="assets/iPhone 15.png"
+          alt="Kyan Mobile App"
+          style="
+            height: 560px;
+            width: auto;
+            max-width: none;
+            display: block;
+            position: relative;
+            z-index: 1;
+          "
+        />
+      </div>
+    </div>
+  </div>
+</div>
